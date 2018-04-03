@@ -4,7 +4,7 @@ import pymongo
 import datetime
 def savedata(dic,col):
     try:
-        client = pymongo.MongoClient(host='123.206.82.71', port=2232)
+        client = pymongo.MongoClient(host='自己mongodb', port=2232)
         client.admin.authenticate('root', 'redhat')
         db = client.spiders
         collections = db[col]
@@ -15,14 +15,14 @@ def savedata(dic,col):
         print(e)
 
 def truncate(col):
-    client = pymongo.MongoClient(host='123.206.82.71', port=2232)
+    client = pymongo.MongoClient(host='自己mongodb', port=2232)
     client.admin.authenticate('root', 'redhat')
     db = client.spiders
     collections = db[col]
     collections.remove({})
     
 def createindex(col):
-    client = pymongo.MongoClient(host='123.206.82.71', port=2232)
+    client = pymongo.MongoClient(host='自己mongodb', port=2232)
     client.admin.authenticate('root', 'redhat')
     db = client.spiders
     collections = db[col]
