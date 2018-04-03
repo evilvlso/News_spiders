@@ -8,7 +8,7 @@ class News(object):
         self.global_news=defaultdict(list)
         self.db=self.connect_db()
     def connect_db(self):
-        client=pymongo.MongoClient(host='123.206.82.71',port=2232)
+        client=pymongo.MongoClient(host='自己mongodb',port=2232)
         client.admin.authenticate('root','redhat')
         db=client.spiders
         return db
